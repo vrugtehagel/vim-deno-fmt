@@ -1,0 +1,32 @@
+*vim-deno-fmt.txt* Run `deno fmt` whenever it makes sense
+
+====================================================================
+CONTENTS                                        *VimDenoFmtContents*
+
+    1. Usage .......... |VimDenoFmtUsage|
+    2. License ........ |VimDenoFmtLicense|
+    3. Bugs ........... |VimDenoFmtBugs|
+
+====================================================================
+1. Usage                                           *VimDenoFmtUsage*
+
+This plugin runs `deno fmt` whenever a file is written that is part
+of a Deno project. This is determined by the presence of a
+`deno.json` file in any of the parent directories of the file being
+edited.
+
+The plugin is completely passive; it has no options.
+
+====================================================================
+2. License                                       *VimDenoFmtLicense*
+
+The VimDenoFmt plugin is MIT licensed.
+
+====================================================================
+3. Bugs                                             *VimDenoFmtBugs*
+
+For any bug reports or other forms of communication regarding this
+plugin, please file an issue at
+<https://github.com/vrugtehagel/vim-deno-fmt>
+
+====================================================================
