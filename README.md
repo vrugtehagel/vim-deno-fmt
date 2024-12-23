@@ -18,7 +18,7 @@ cd ~/.vim/pack/plugins/start
 then clone this repository using
 
 ```bash
-git@github.com:vrugtehagel/vim-deno-fmt.git
+git clone git@github.com:vrugtehagel/vim-deno-fmt.git
 ```
 
 And that's it!
