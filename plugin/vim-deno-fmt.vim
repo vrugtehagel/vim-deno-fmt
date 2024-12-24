@@ -15,7 +15,7 @@ function s:MaybeDenoFmt()
 		let previous_directory = directory
 		let directory = fnamemodify(directory, ':h')
 	endwhile
-	silent execute '!deno fmt -q' '%:p'
+	silent execute('!deno fmt %:p >& /dev/null')
 	edit! %:p
 endfunction
 
