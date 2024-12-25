@@ -1,7 +1,6 @@
 " File: vim-deno-fmt.vim
 " Description: Run `deno fmt` whenever it makes sense
 " Maintainer: vrugtehagel
-" Version: 0.1
 " License: MIT
 
 if exists('g:loaded_vim_deno_fmt') | finish | endif

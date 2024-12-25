@@ -20,13 +20,13 @@ The plugin is completely passive; it has no options.
 ====================================================================
 2. License                                       *VimDenoFmtLicense*
 
-The VimDenoFmt plugin is MIT licensed.
+The VIM Deno fmt plugin is MIT licensed.
 
 ====================================================================
 3. Bugs                                             *VimDenoFmtBugs*
 
 For any bug reports or other forms of communication regarding this
 plugin, please file an issue at
-<https://github.com/vrugtehagel/vim-deno-fmt>
+<https://github.com/vrugtehagel/vim-deno-fmt>.
 
 ====================================================================
