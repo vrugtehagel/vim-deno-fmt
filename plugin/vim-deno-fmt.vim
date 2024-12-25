@@ -15,8 +15,10 @@ function s:MaybeDenoFmt()
 		let previous_directory = directory
 		let directory = fnamemodify(directory, ':h')
 	endwhile
+	let view = winsaveview()
 	silent execute('!deno fmt %:p >& /dev/null')
 	edit! %:p
+	call winrestview(view)
 endfunction
 
 let s:deno_exists = system('command -v deno')
