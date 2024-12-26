@@ -15,12 +15,13 @@ of a Deno project. This is determined by the presence of a
 `deno.json` file in any of the parent directories of the file being
 edited.
 
-The plugin is completely passive; it has no options.
+The plugin is completely passive; it has no options. It requires
+Deno to be installed; if it is not found, the plugin does nothing.
 
 ====================================================================
 2. License                                       *VimDenoFmtLicense*
 
-The VimDenoFmt plugin is MIT licensed.
+The "VIM Deno fmt" plugin is MIT licensed.
 
 ====================================================================
 3. Bugs                                             *VimDenoFmtBugs*

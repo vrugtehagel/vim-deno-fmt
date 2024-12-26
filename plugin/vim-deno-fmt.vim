@@ -1,29 +1,26 @@
-" File: vim-deno-fmt.vim
-" Description: Run `deno fmt` whenever it makes sense
-" Maintainer: vrugtehagel
-" Version: 0.1
-" License: MIT
+vim9script
 
-if exists('g:loaded_vim_deno_fmt') | finish | endif
-let g:loaded_vim_deno_fmt = 1
+const deno_exists = system('command -v deno')
+if !deno_exists | finish | endif
 
-function s:MaybeDenoFmt()
-	let directory = expand('%:p:h')
-	let previous_directory = ''
-	while !filereadable(directory . '/deno.json')
+def MaybeDenoFmt(): void
+	var directory = expand('%:p:h')
+	var previous_directory = ''
+	while !filereadable(directory .. '/deno.json')
 		if previous_directory == directory | return | endif
-		let previous_directory = directory
-		let directory = fnamemodify(directory, ':h')
+		previous_directory = directory
+		directory = fnamemodify(directory, ':h')
 	endwhile
-	let view = winsaveview()
+	const view = winsaveview()
 	silent execute('!deno fmt %:p >& /dev/null')
 	edit! %:p
 	call winrestview(view)
-endfunction
+enddef
 
-let s:deno_exists = system('command -v deno')
-augroup vim_deno_fmt
-	if strlen(s:deno_exists) > 0
-		autocmd BufWritePost * call s:MaybeDenoFmt()
-	endif
-augroup END
+autocmd_add([{
+	group: 'vim_deno_fmt',
+	event: 'BufWritePost',
+	pattern: '*',
+	cmd: 'MaybeDenoFmt()',
+	replace: true,
+}])
