@@ -14,7 +14,7 @@ def MaybeDenoFmt(): void
 	const view = winsaveview()
 	silent execute('!deno fmt %:p >& /dev/null')
 	edit! %:p
-	call winrestview(view)
+	winrestview(view)
 enddef
 
 autocmd_add([{
