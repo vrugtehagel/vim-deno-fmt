@@ -1,6 +1,6 @@
-# VIM Deno fmt
+# VIM deno fmt
 
-Run `deno fmt` whenever it makes sense.
+Run deno fmt whenever it makes sense.
 
 This is a very simple plugin that runs `deno fmt` whenever a file within a Deno
 project is written to. This is detected by the presence of a `deno.json` file in
