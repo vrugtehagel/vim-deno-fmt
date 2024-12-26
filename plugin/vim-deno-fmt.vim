@@ -7,17 +7,17 @@ if exists('g:loaded_vim_deno_fmt') | finish | endif
 let g:loaded_vim_deno_fmt = 1
 
 function s:MaybeDenoFmt()
-	let directory = expand('%:p:h')
-	let previous_directory = ''
-	while !filereadable(directory . '/deno.json')
-		if previous_directory == directory | return | endif
-		let previous_directory = directory
-		let directory = fnamemodify(directory, ':h')
+	let l:directory = expand('%:p:h')
+	let l:previous_directory = ''
+	while !filereadable(l:directory . '/deno.json')
+		if l:previous_directory == l:directory | return | endif
+		let l:previous_directory = l:directory
+		let l:directory = fnamemodify(l:directory, ':h')
 	endwhile
-	let view = winsaveview()
+	let l:view = winsaveview()
 	silent execute('!deno fmt %:p >& /dev/null')
 	edit! %:p
-	call winrestview(view)
+	call winrestview(l:view)
 endfunction
 
 let s:deno_exists = system('command -v deno')
