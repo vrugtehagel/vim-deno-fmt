@@ -18,7 +18,7 @@ def MaybeDenoFmt(): void
 enddef
 
 autocmd_add([{
-	group: 'vim_deno_fmt',
+	group: 'VimDenoFmt',
 	event: 'BufWritePost',
 	pattern: '*',
 	cmd: 'MaybeDenoFmt()',
